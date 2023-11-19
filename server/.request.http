@@ -1,0 +1,60 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "fname": "em hung",
+    "lname": "ok dep trai",
+    "email": "hung224444@gmail.com",
+    "password": "123456",
+    "location": "quang binh vip",
+    "status": "active"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "user8@gmail.com",
+    "password": "123456"
+}
+
+
+###
+POST http://localhost:5000/upload-car
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE4MjRhYjhiYWZjN2EwMTAxZmZmOGQiLCJpYXQiOjE2OTYxNjUzNjEsImV4cCI6MTY5NjE2NzE2MX0.Co0MLs5x6aAynB0K3OhflEa6U45xuti0Gksob-_O9uc
+
+{
+    "title": "C30022",
+    "description": "DEP SANG XIN MIN",
+    "price": "170000",
+    "location": "111 NGUYEN XI, PHUONG HOA MINH, Quan Lien Chieu"
+}
+
+###
+
+GET http://localhost:5000/get-car
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRjZmY5MTI0MWJhNGQwYjlkNjY1NjMiLCJpYXQiOjE2OTk2MzAyODksImV4cCI6MTY5OTYzMjA4OX0.w9AtQPF7XXbn5Yeu2XUUK0_YBykm2mVNJWp90Np-cW8
+
+
+###
+GET http://localhost:5000/getAllUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRjZmY5MTI0MWJhNGQwYjlkNjY1NjMiLCJpYXQiOjE2OTk3MDE0MDAsImV4cCI6MTY5OTcwMzIwMH0.j6D_g_WboF7JUp2Kq8Od2xv3eojyVLU_natldGp1iQM
+
+###
+GET http://localhost:5000/getProfile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRjZmY5MTI0MWJhNGQwYjlkNjY1NjMiLCJpYXQiOjE2OTk2MzAyODksImV4cCI6MTY5OTYzMjA4OX0.w9AtQPF7XXbn5Yeu2XUUK0_YBykm2mVNJWp90Np-cW8
+
+###
+POST http://localhost:5000/review-car
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMzZjY5N2E5NDRiNjFhZDAyNjdjYzgiLCJpYXQiOjE2OTk1ODEzNzgsImV4cCI6MTY5OTU4MzE3OH0.3wEKgsnz60ERXnxpa2k_k6AWAOvDhstb2J6KVLXbOWc
+
+{
+    "Car": "651823158bafc7a0101fff87",
+    "content": "dich vu tot 5 sao "
+}
