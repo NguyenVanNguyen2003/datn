@@ -215,7 +215,78 @@ function ContentProduct() {
             window.location.href = linkProduct;
         }
     };
+    // ảnh xe chi tiết trên cùng
+    const contactproduct__tablet = {
+        dots: true,
+        infinite: false,
+        speed: 400,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        style: { display: 'none' },
+        responsive: [
+            {
+                breakpoint: 990,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                    style: { display: 'block' },
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 2,
+                    style: { display: 'block' },
+                },
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    style: { display: 'block' },
+                },
 
+            },
+            {
+                breakpoint: 350,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    style: { display: 'block' },
+                },
+
+            },
+        ],
+    };
+    const dataContactProduct = [
+        {
+            id: 1,
+            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+        },
+        {
+            id: 2,
+            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+        },
+        {
+            id: 3,
+            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+        },
+        {
+            id: 4,
+            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+        },
+        {
+            id: 5,
+            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+        },
+
+    ];
     return (
         <div className='contentproduct'>
             <div className="contentproduct__img">
@@ -232,6 +303,13 @@ function ContentProduct() {
                     <p>Xem tất cả ảnh</p>
                 </div>
             </div>
+            <Slider {...contactproduct__tablet}>
+                {dataContactProduct.map((item) => (
+                    <div className='contentproduct-imgtablet'>
+                        <img src={item.imgContentProduct} className='contentproduct-imgtablet-img'></img>
+                    </div>
+                ))}
+            </Slider>
             <div className="contentproduct__detail">
                 <div className='contentproduct__detail-container'>
                     <div className='contentproduct__detail-container-name'>

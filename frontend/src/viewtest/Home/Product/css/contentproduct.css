@@ -9,7 +9,8 @@
     grid-gap: 16px;
     gap: 16px;
     width: 100%;
-    margin-bottom: 20px;
+    height: 525px;
+    margin-bottom: 40px;
 }
 
 .contentproduct__img-main {
@@ -20,15 +21,14 @@
 
 .contentproduct__img-main img {
     width: 100%;
-    /* height: 600px; */
-    height: auto;
+    height: 525px; 
     border-radius: 20px;
-
+    object-fit:cover;
 }
 
 .contentproduct__img-list {
     width: 32%;
-    height: 100%;
+    height: 525px;
     display: flex;
     flex-direction: column;
     grid-gap: 16px;
@@ -67,6 +67,7 @@
 }
 
 .contentproduct__detail {
+    margin-top: 50px;
     width: 100%;
     display: flex;
 }
@@ -1014,49 +1015,29 @@
     /* margin-left: 70px; */ 
   }
 
+  /* css hình ảnh xe chi tiết tablet */
+  .contentproduct-imgtablet {
+    width: 100%;
+    height: 550px;
+  }
+  .contentproduct-imgtablet-img {
+    width: 100%;
+    height: 100%;
+  } 
+
 /* Reponsive */
 /* Mobile 0-750px */
 @media (max-width: 46.875em) {
     .contentproduct__img {
-        display: flex;
-        width: 900px;
-        overflow-x: scroll;
-        scrollbar-width: none;
-        /* Ẩn thanh trượt trong Firefox */
-        -ms-overflow-style: none;
-        /* Ẩn thanh trượt trong Internet Explorer/Edge */
+        display: none
     }
-
-    .contentproduct__img::-webkit-scrollbar {
-        width: 0;
+    .contentproduct-imgtablet {
+        height: 420px;
+        display: block;
     }
-
-    .contentproduct__img-main {
-        width: 100%;
-    }
-
-    .contentproduct__img-main img {
-        width: 600px;
-    }
-
-    .contentproduct__img-list {
-        display: flex;
-        flex-direction: row;
-
-    }
-
-    .contentproduct__img-list img {
-        width: 600px;
-        height: 400px;
-    }
-
-    .contentproduct__img-all {
-        display: none;
-    }
-
     .contentproduct__detail {
         width: 80%;
-        margin: 0 auto;
+        margin: 50px auto 0;
         display: flex;
         flex-direction: column;
     }
@@ -1101,37 +1082,12 @@
 /* Mobile 0-500px */
 @media (max-width: 31.25em) {
     .contentproduct__img {
-        display: flex;
-        width: 500px;
-        overflow-x: scroll;
-        scrollbar-width: none;
-        /* Ẩn thanh trượt trong Firefox */
-        -ms-overflow-style: none;
-        /* Ẩn thanh trượt trong Internet Explorer/Edge */
-    }
-
-    .contentproduct__img::-webkit-scrollbar {
-        width: 0;
-    }
-
-    .contentproduct__img-main {
-        width: 100%;
-    }
-
-    .contentproduct__img-main img {
-        width: 500px;
-    }
-
-    .contentproduct__img-list {
-        display: flex;
-        flex-direction: row;
-
-    }
-
-    .contentproduct__img-list img {
-        width: 500px;
-        height: 335px;
-    }
+        display:none
+      }
+      .contentproduct-imgtablet {
+        display: block;
+        height: 350px;
+      }
     .contentproduct__detail-container-name .group-name h3 {
         font-size: 2.5rem;
     }
@@ -1163,7 +1119,7 @@
     }
     .contentproduct__detail {
         width: 96%;
-        margin: 0 auto;
+        margin: 40px auto 0;
         display: flex;
         flex-direction: column;
     }
@@ -1186,46 +1142,16 @@
         width: 96%;
         margin: 0 auto;
     }
-
     .contentproduct__img {
-        display: flex;
-        width: 900px;
-        overflow-x: scroll;
-        scrollbar-width: none;
-        /* Ẩn thanh trượt trong Firefox */
-        -ms-overflow-style: none;
-        /* Ẩn thanh trượt trong Internet Explorer/Edge */
+        display: none; 
     }
-
-    .contentproduct__img::-webkit-scrollbar {
-        width: 0;
+    .contentproduct-imgtablet {
+        height: 550px;
+        display: block;
     }
-
-    .contentproduct__img-main {
-        width: 100%;
-    }
-
-    .contentproduct__img-main img {
-        width: 900px;
-    }
-
-    .contentproduct__img-list {
-        flex-direction: row;
-        margin-left: 10px;
-    }
-
-    .contentproduct__img-list img {
-        width: 900px;
-        height: 600px;
-    }
-
-    .contentproduct__img-all {
-        display: none;
-    }
-
     .contentproduct__detail {
         width: 80%;
-        margin: 0 auto;
+        margin: 50px auto 0;
         display: flex;
         flex-direction: column;
     }
@@ -1258,5 +1184,15 @@
     }
 }
 
-/* PC >=991 */
-@media (min-width: 61.9375em) {}
+/* PC >=1200 */
+@media (max-width: 75em) {
+    .contentproduct {
+        max-width: 1100px;
+    }
+}
+/* 1100px */
+@media (max-width: 68.75em) {
+    .contentproduct {
+        max-width: 990px;
+    }
+}
