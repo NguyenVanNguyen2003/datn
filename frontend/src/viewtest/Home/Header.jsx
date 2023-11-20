@@ -77,7 +77,7 @@ function Header() {
         
         <div className='header__page-item-login-overlay'>
           <div className='header__page-item-login-overlay-avt'> 
-         <img src= {defaultImage} alt="" />
+         <img src= {imagePath || defaultImage} alt="" />
           <h3 className='header__page-item-login-overlay-avt-name'>
            Xin chào {fullName};
           </h3>
