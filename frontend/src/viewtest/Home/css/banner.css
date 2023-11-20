@@ -84,6 +84,7 @@
     color: var(--white-color);
     margin: auto 0;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 /* Reponsive */

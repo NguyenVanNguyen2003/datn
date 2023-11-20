@@ -52,7 +52,7 @@ function Header() {
  
   
   return (
-    <div className='header'>
+    <div className='header' id='header'>
       <Link to="/" className='header__icon'>
         <img src='https://www.mioto.vn/static/media/logo-full.ea382559.png' className='header__icon-img'></img>
       </Link>

@@ -203,7 +203,7 @@ function Content() {
     }
   };
   return (
-    <div className='content' id='ulala'>
+    <div className='content' id='content'>
       <h1 className='content__text'>Xe dành cho bạn</h1>
       <div className='content__search'>
         <div class="content__search-form">

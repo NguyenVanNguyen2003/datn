@@ -1,18 +1,27 @@
 import React from 'react';
 import './css/footer.css';
 import './css/base.css';
-import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTiktok, FaFacebookMessenger } from "react-icons/fa6";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
+  // const scrollToTop = () => {
+  //   scroll.scrollToTop({
+  //     duration: 800,
+  //     delay: 0,
+  //     smooth: 'easeInOutQuart',
+  //   });
+  // };
   return (
     <footer className='footer'>
       <div className='footer__dash'></div>
       <div className='footer__content'>
         <div className='footer__content-firt'>
-          <a href="header">
+        <ScrollLink to='header' smooth={true} duration={800} offset={-20} delay={100}>
           <img className='footer__content-firt-img' src='https://www.mioto.vn/static/media/logo-full.ea382559.png'></img>           
-          </a>
+      </ScrollLink>
           < div className='footer__column'>
           <div className='footer__content-firt-phone'>
             <h4 className='footer__content-firt-phone-number'>0948988426</h4>

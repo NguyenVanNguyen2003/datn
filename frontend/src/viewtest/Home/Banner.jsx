@@ -2,8 +2,7 @@ import React from 'react'
 import './css/base.css';
 import './css/banner.css';
 import { FaMedal } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-// import { Link } from "react-scroll"
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 function Banner() {
   return (
     <div className='banner'>
@@ -27,18 +26,11 @@ function Banner() {
           <p className='banner__list-point-text'>
             20 Điểm</p>
         </div>
-        {/* <Link
-          activeClass="active"
-          to="ulala"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        >
-        </Link> */}
+        <ScrollLink to='content' smooth={true} duration={800}>
           <button className='banner__list-search'>
             <h3>Tìm xe</h3>
           </button>
+      </ScrollLink>
       </div>
     </div>
   )
