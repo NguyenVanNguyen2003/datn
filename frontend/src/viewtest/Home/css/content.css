@@ -13,7 +13,46 @@
   margin-bottom: 40px;
   text-align: center;
 }
+.content__search {
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  margin: 0 auto 40px;
+  cursor: pointer;
+}
+.content__search-form {
+  width: 70%;
+}
+.content__search-form-input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+  padding-left: 10px;
+}
+.content__search-form-input:focus {
+  outline: none;
+}
+.content__search-button {
+  width: 50px;
+  background-color: var(--button-color);
+  color: var(--white-color);
+  font-size: 1.6rem;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.content__search-button:hover {
+  cursor: pointer;
+}
+.content__search-button-icon {
 
+}
 .content__list {
   flex: 1;
   display: flex;
@@ -392,7 +431,10 @@ opacity: 0.8;
 
   .content__text {
     font-size: 3.8rem;
-    margin-bottom: -40px;
+    margin-bottom: 40px;
+  }
+  .content__search {
+    margin-bottom: -10px;
   }
 
   .content__list-child-name-main {
@@ -422,7 +464,7 @@ opacity: 0.8;
 
   .content__text {
     font-size: 3.5rem;
-    margin-bottom: -30px;
+    margin-bottom: 30px;
   }
 
    /* Ẩn các thuộc tính cũ */

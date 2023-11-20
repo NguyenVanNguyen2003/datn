@@ -19,7 +19,10 @@ import Resetpw from './viewtest/User/Resetpw';
 import Navbarmobile from './viewtest/User/Navbarmobile';
 import Maintrip from './viewtest/Home/Trip/Maintrip';
 import ScrollToTop from './viewtest/Home/Scroptotop';
-
+import Policy from './viewtest/Home/Policy/Policy';
+import Terms from './viewtest/Home/Policy/Terms';
+import Personalinfo from './viewtest/Home/Policy/Personalinfo';
+import Resolveconflic from './viewtest/Home/Policy/Resolveconflic';
 function App() {
   return (
     <>
@@ -44,6 +47,10 @@ function App() {
           <Route path='/Resetpw' element={<Resetpw/>} />
           <Route path='/Navbarmobile' element={<Navbarmobile/>} />
           <Route path='/trip' element={<Maintrip/>} />
+          <Route path='/policy' element={<Policy/>} />
+          <Route path='/terms' element={<Terms/>} />
+          <Route path='/perso' element={<Personalinfo/>} />
+          <Route path='/resolve' element={<Resolveconflic/>} />
         </Routes>
       </Router>
     </>

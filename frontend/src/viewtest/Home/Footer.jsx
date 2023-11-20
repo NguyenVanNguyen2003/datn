@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/footer.css';
 import './css/base.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTiktok, FaFacebookMessenger } from "react-icons/fa6";
 
 function Footer() {
@@ -33,10 +33,10 @@ function Footer() {
           <li className="footer__content-list-child">
             <h3 className="footer__content-list-child-name" > Chính sách</h3>
             <div className="footer__content-list-child-text">
-              <p className="footer__content-list-child-text-text">Chính sách và quy định</p>
-              <p className="footer__content-list-child-text-text">Quy chế hoạt động</p>
-              <p className="footer__content-list-child-text-text">Bảo mật thông tin</p>
-              <p className="footer__content-list-child-text-text">Giải quyết tranh chấp</p>
+              <Link to="/policy" className="footer__content-list-child-text-text">Chính sách và quy định</Link>
+              <Link to="/terms" className="footer__content-list-child-text-text">Nguyên tắc chung</Link>
+              <Link to="/perso" className="footer__content-list-child-text-text">Chính sách bảo mật</Link>
+              <Link to="/resolve" className="footer__content-list-child-text-text">Giải quyết khiếu nại</Link>
             </div>
           </li>
           <li className="footer__content-list-child">

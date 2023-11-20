@@ -837,7 +837,8 @@
  margin-top: 25px;
 }
 .footer__content-list-child-text {
- 
+  display: flex;
+  flex-direction: column;
 }
 .footer__content-list-child-text-text {
     font-size: 1.6rem;
