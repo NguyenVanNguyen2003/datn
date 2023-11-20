@@ -29,9 +29,9 @@
     font-size: 2rem;
     margin: 50px 0;
 }
-.aboutme__container-list-button {
+.aboutme__container-list-button{
     border: none;
-    background-color: var(--button-color) !important;
+    background-color: var(--button-color);
     list-style: none;
     text-decoration: none;
 }

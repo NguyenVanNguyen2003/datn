@@ -850,7 +850,9 @@
   .slick-list {
     margin: 0 -10px;
   }
-  
+  .contentproduct__other h2 {
+    margin:-50px 0 30px;
+  }
   .contentproduct__other-child {
     /* đặt chiều rộng không có ý nghĩa lắm vì mình có thể điều chỉnh slider */
     /* width: 450px;  */

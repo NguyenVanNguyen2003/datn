@@ -15,7 +15,11 @@ function Aboutme() {
                     <p className='aboutme__container-list-text'>Mioto kết nối khách hàng có nhu cầu thuê xe
                         với hàng ngàn chủ xe ô tô ở Đà Nẵng, Hà Nội & các tỉnh thành khác.
                         Mioto hướng đến việc xây dựng cộng đồng người dùng ô tô văn minh & uy tín tại Việt Nam.</p>
-                    <Link to='/about' className='aboutme__container-list-button btn__large'><p>Tìm hiểu thêm</p></Link>
+                    <Link to='/about'>
+                        <button className='aboutme__container-list-button btn__large'>
+                        <p>Tìm hiểu thêm</p>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
