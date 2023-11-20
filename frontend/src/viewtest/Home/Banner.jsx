@@ -1,6 +1,6 @@
 import React from 'react'
-import './css/banner.css';
 import './css/base.css';
+import './css/banner.css';
 import {FaMedal} from "react-icons/fa6";
 import { Link } from "react-router-dom";
 function Banner() {
@@ -27,7 +27,7 @@ function Banner() {
               20 Điểm</p>
           </div>
           <Link to="/login">
-          <button className='banner__list-search btn__large'>
+          <button className='banner__list-search'>
               <h3>Tìm xe</h3>
           </button>
           </Link>
