@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./css/policy.css"
 import Header from '../Header';
 import Footer from '../Footer';
-// import "./style/Dropdown.css";
 import { FaAngleDown } from "react-icons/fa6";
+import {Link} from 'react-router-dom';
 
 const Policy = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,10 +75,10 @@ const Policy = () => {
                 </button>
                 {isOpen && (
                   <div className="dropdown-content">
-                    <div className="dropdown-item"> Chính sách quy định</div>
-                    <div className="dropdown-item">Nguyên tắc chung</div>
-                    <div className="dropdown-item">chính sách bảo mật</div>
-                    <div className="dropdown-item">Giải quyết khiếu nại</div>
+                    <Link to="/policy" className="dropdown-item"> Chính sách quy định</Link>
+                    <Link to="/terms" className="dropdown-item">Nguyên tắc chung</Link>
+                    <Link to="/perso" className="dropdown-item">chính sách bảo mật</Link>
+                    <Link to="/resolve"className="dropdown-item">Giải quyết khiếu nại</Link>
                   </div>
                 )}
               </div>
@@ -87,15 +87,15 @@ const Policy = () => {
             
               <div className="hidden-sidebar">
               <div className="line"></div>
-              <a href="" className="tutorial-sidebar--item activee">
+              <Link to="/policy" className="tutorial-sidebar--item activee">
                 Chính sách & Quy định
-              </a>
+              </Link>
               <div className="line"></div>
-              <a href="/Terms.jsx">Nguyên tắc chung</a>,
+              <Link to="/terms" className="font16">Nguyên tắc chung</Link>,
               <div className="line"></div>
-              <a href="">Chính sách bảo mật</a>
+              <Link to="/perso" className="font16">Chính sách bảo mật</Link>
               <div className="line"></div>
-              <a href="">Giải quyết khiếu nại</a>
+              <Link to="/resolve" className="font16">Giải quyết khiếu nại</Link>
               
             </div>
             

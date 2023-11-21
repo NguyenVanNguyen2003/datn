@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./css/policy.css"
 import Header from '../Header';
 import Footer from '../Footer';
+import {Link} from 'react-router-dom';
+
 
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -75,30 +77,28 @@ const Resolveconflic = () => {
                 </button>
                 {isOpen && (
                   <div className="dropdown-content">
-                    <div className="dropdown-item"> Chính sách quy định</div>
-                    <div className="dropdown-item">Nguyên tắc chung</div>
-                    <div className="dropdown-item">chính sách bảo mật</div>
-                    <div className="dropdown-item">Giải quyết khiếu nại</div>
-                  </div>
+                  <Link to="/policy" className="dropdown-item"> Chính sách quy định</Link>
+                 <Link to="/terms" className="dropdown-item">Nguyên tắc chung</Link>
+                 <Link to="/perso" className="dropdown-item">chính sách bảo mật</Link>
+                 <Link to="/resolve"className="dropdown-item">Giải quyết khiếu nại</Link>
+               </div>
                 )}
               </div>
             </div>
+            <div className="sidebar-content">
             <div className="hidden-sidebar">
-              <div className="sidebar-content">
-                <div class="line"></div>
-
-                <a href="">Chính sách & Quy định</a>
-                <div class="line"></div>
-                <a href="">Nguyên tắc chung</a>
-
-                <div class="line"></div>
-
-                <a href="">Chính sách bảo mật</a>
-                <div class="line"></div>
-                <a href="" className="tutorial-sidebar--item activee">
-                  Giải quyết khiếu nại
-                </a>
-              </div>
+              <div className="line"></div>
+              <Link to="/policy">
+                Chính sách & Quy định
+              </Link>
+              <div className="line"></div>
+              <Link to="/terms">Nguyên tắc chung</Link>,
+              <div className="line"></div>
+              <Link to="/perso">Chính sách bảo mật</Link>
+              <div className="line"></div>
+              <Link to="/resolve"  className="tutorial-sidebar--item activee">Giải quyết khiếu nại</Link>
+              
+            </div>
             </div>
             <div className="category-option">
               <h4>Quy trình giải quyết khiếu nại</h4>

@@ -269,7 +269,10 @@ function Content() {
           </Link>
         ))}
       </div>
+      {/* Về sửa lại phần này */}
       <div className="content__mobile">
+      {cars.map((car, index) => (
+          <Link to={`/product/${car._id}`} className='content__list-child' key={index}>
         <Slider {...contact__mobile}>
           {dataDigitalBestSeller.map((item) => (
             <div key={item.id} className="content__mobile-child" onClick={() => handleProductClick(item.linkProduct)}>
@@ -337,6 +340,8 @@ function Content() {
             </div>
           ))}
         </Slider>
+        </Link>
+        ))}
       </div>
     </div>
   )

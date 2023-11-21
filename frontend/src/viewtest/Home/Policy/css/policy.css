@@ -58,6 +58,7 @@ font-size: 50px;
 }
 .announcement-content p {
     text-align: justify;
+    font-size: 16px;
 }
 .sidebar-polyci{
     display: flex;
@@ -67,6 +68,7 @@ font-size: 50px;
 .sidebar-content{
     width: 300px;
     margin-right: 50px;
+    font-size: 16px;
 }
  a{
  text-decoration: none;
@@ -84,6 +86,7 @@ font-size: 50px;
 }
 .category-option h4 {
     font-size: 35px;
+    margin: 20px 0;
 }
 .subtitle{
     font-weight: 500;
@@ -103,7 +106,7 @@ font-size: 50px;
 .category-option-content p {
     margin-bottom: 12px;
     line-height: 24px;
-   
+   font-size: 16px;
 }
 .category-option-table {
     border: 1px solid #c6c6c6;
@@ -141,7 +144,7 @@ font-size: 50px;
     
 }
 .tutorial-sidebar--item {
-    font-size: 1rem;
+    font-size: 16px;
     color: #242420;
     padding-left: 16px;
     cursor: pointer;
@@ -297,7 +300,7 @@ width: 100%;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .dropdown-item:hover {
