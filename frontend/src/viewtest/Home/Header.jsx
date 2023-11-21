@@ -54,7 +54,7 @@ function Header() {
   return (
     <div className='header'>
       <Link to="/" className='header__icon'>
-        <img src='https://www.mioto.vn/static/media/logo-full.ea382559.png' className='header__icon-img'></img>
+        <img src='https://i.ibb.co/9W9dKYh/5.png' className='header__icon-img'></img>
       </Link>
       <ul className='header__page'>
         <Link to="/about" className='header__page-item'>Về Mioto</Link>

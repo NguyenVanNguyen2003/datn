@@ -133,7 +133,7 @@ function UserInfor() {
             </li>
           </Link>
 
-          <Link to="/MainUser" className="userinfor-nav-link">
+          <Link className="userinfor-nav-link">
             <li className="userinfor__nav-list-child">
               <i className="userinfor__nav-list-child-icon">
                 <FaArrowRightFromBracket></FaArrowRightFromBracket>
