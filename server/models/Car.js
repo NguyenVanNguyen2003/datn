@@ -18,9 +18,17 @@ const CarsSchema = new Schema({
     type: String,
     default: ""
   },
-  userPost: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
+  image1: {
+    type: String,
+    default: ""
+  },
+  image2: {
+    type: String,
+    default: ""
+  },
+  image3: {
+    type: String,
+    default: ""
   },
   location: {
     type: String,
@@ -29,10 +37,13 @@ const CarsSchema = new Schema({
   price: {
     type: Number
   },
-  numberCar: {
+  chair: {
+    type: Number,
+    minlength: 1,
+    maxlength: 2,
+  },
+  fuel: {
     type: String,
-    required: true,
-    unique: true,
   },
 });
 

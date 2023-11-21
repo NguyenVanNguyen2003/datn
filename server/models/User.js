@@ -8,6 +8,18 @@ const UserSchema = new Schema({
     maxLength: 20,
     required: true
   },
+  birthDay:{
+    type: String,
+    default: "01/01/1991"
+  },
+  sex:{
+    type: String,
+    default: "Nam",
+  },
+  Vip:{
+    type: String,
+    default: "VIP 1"
+  },
   phoneNumber: {
     type: Number,
     minlength: 11,
@@ -31,6 +43,7 @@ const UserSchema = new Schema({
   },
   imagePath: {
     type: String,
+    default: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg"
   },
   isAdmin: {
     type: Boolean,
@@ -50,6 +63,9 @@ const UserSchema = new Schema({
     enum: ["Yes", "No"],
     default: "No"
   },
+  GPLX:{
+    type: String,
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);

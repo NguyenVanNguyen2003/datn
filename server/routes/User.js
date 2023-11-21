@@ -38,4 +38,23 @@ router.get("/getProfile", verifyToken, async (req, res) => {
   }
 });
 
+router.delete("/delete-user/:userId", verifyToken, checkAdmin, async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    // Kiểm tra xem userId có hợp lệ không
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ success: false, message: "Invalid User ID" });
+    }
+    const deletedUser = await User.findByIdAndDelete(userId);
+    if (!deletedUser) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    res.json({ success: true, message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
 module.exports = router;
