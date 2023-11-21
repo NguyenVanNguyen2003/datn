@@ -51,10 +51,10 @@ function Footer() {
           <li className="footer__content-list-child">
             <h3 className="footer__content-list-child-name">Tìm hiểu thêm</h3>
             <div className="footer__content-list-child-text">
-              <p className="footer__content-list-child-text-text">Hướng dẫn chung</p>
-              <p className="footer__content-list-child-text-text">Hướng dẫn đặt xe</p>
-              <p className="footer__content-list-child-text-text">Hướng dẫn thanh toán</p>
-              <p className="footer__content-list-child-text-text">Hỏi và trả lời</p>
+              <Link to='/mainhow' className="footer__content-list-child-text-text">Hướng dẫn chung</Link>
+              <Link to='/book' className="footer__content-list-child-text-text">Hướng dẫn đặt xe</Link>
+              <Link to='/paymen' className="footer__content-list-child-text-text">Hướng dẫn thanh toán</Link>
+              <Link to='/regu' className="footer__content-list-child-text-text">Hỏi và trả lời</Link>
             </div>
           </li>
           <li className="footer__content-list-child footer__content-list-child-name-none">

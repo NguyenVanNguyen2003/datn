@@ -19,10 +19,16 @@ import Resetpw from './viewtest/User/Resetpw';
 import Navbarmobile from './viewtest/User/Navbarmobile';
 import Maintrip from './viewtest/Home/Trip/Maintrip';
 import ScrollToTop from './viewtest/Home/Scroptotop';
+// Tú Footer
 import Policy from './viewtest/Home/Policy/Policy';
 import Terms from './viewtest/Home/Policy/Terms';
 import Personalinfo from './viewtest/Home/Policy/Personalinfo';
 import Resolveconflic from './viewtest/Home/Policy/Resolveconflic';
+// Tiến Footer
+import Mainhowto from './viewtest/Home/howtowork/Mainhowto';
+import Booking from './viewtest/Home/howtowork/Booking';
+import Paymenthowto from './viewtest/Home/howtowork/Paymenthowto';
+import Regu from './viewtest/Home/howtowork/Regu';
 function App() {
   return (
     <>
@@ -51,6 +57,10 @@ function App() {
           <Route path='/terms' element={<Terms/>} />
           <Route path='/perso' element={<Personalinfo/>} />
           <Route path='/resolve' element={<Resolveconflic/>} />
+          <Route path='/mainhow' element={<Mainhowto/>} />
+          <Route path='/book' element={<Booking/>} />
+          <Route path='/paymen' element={<Paymenthowto/>} />
+          <Route path='/regu' element={<Regu/>} />
         </Routes>
       </Router>
     </>
