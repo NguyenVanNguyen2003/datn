@@ -8,7 +8,7 @@ const User = mongoose.model("User");
 const checkAdmin = require("../middleware/checkAdmin");
 
 //API GET ALL USER
-router.get("/getAllUser", verifyToken, checkAdmin, async (req, res) => {
+router.get("/getAllUser", async (req, res) => {
   try {
     const users = await User.find({}).select("-password");;
     res.json({ success: true, users });
@@ -21,40 +21,37 @@ router.get("/getAllUser", verifyToken, checkAdmin, async (req, res) => {
 // API GET USERDetail
 router.get("/getProfile", verifyToken, async (req, res) => {
   try {
-    // Sử dụng req.user để lấy thông tin người dùng từ token
     const user = await User.findById(req.userId).select("-password");
 
     if (!user) {
       return res
         .status(404)
-        .json({ success: false, message: "User not found" });
+        .json({ success: false, message: "Không tìm thấy USER" });
     }
 
-    // Trả về thông tin người dùng
     res.json({ success: true, user });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
+    res.status(500).json({ success: false, message: "Lỗi Server" });
   }
 });
 
-router.delete("/delete-user/:userId", verifyToken, checkAdmin, async (req, res) => {
+router.put("/banned-user/:id", verifyToken, checkAdmin, async (req, res) => {
   try {
-    const userId = req.params.userId;
+    const userId = req.params.id;
 
-    // Kiểm tra xem userId có hợp lệ không
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({ success: false, message: "Invalid User ID" });
+    const user = await User.findByIdAndUpdate(userId, { status: 'banned' });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "Không tìm thấy USER" });
     }
-    const deletedUser = await User.findByIdAndDelete(userId);
-    if (!deletedUser) {
-      return res.status(404).json({ success: false, message: "User not found" });
-    }
-    res.json({ success: true, message: "User deleted successfully" });
+
+    res.json({ success: true, message: "User Đã Bị Ban" });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
+    console.error(error);
+    res.status(500).json({ success: false, message: "Lỗi Server" });
   }
 });
+
 
 module.exports = router;

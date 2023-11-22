@@ -45,6 +45,10 @@ const CarsSchema = new Schema({
   fuel: {
     type: String,
   },
+  numberCar:{
+    type: String,
+    default: ""
+      }
 });
 
 module.exports = mongoose.model("Car", CarsSchema);
