@@ -45,23 +45,19 @@ const CarsSchema = new Schema({
   fuel: {
     type: String,
   },
-  flash: {
+  // NguyenNV thêm
+  // tax: {
+  //  type: String,
+  //  required: true,
+  // },
+  falsh: {
     type: String,
-    default: "Miễn thế chấp",
    },
    star: {
-    type: Number,
+    type: String,
    },
    usage: {
     type: String,
-   },
-   tax: {
-    type: String,
-    default: "Đặt xe nhanh"
-   },
-   tax2: {
-    type: String,
-    default: "Số tự động"
    },
 });
 

@@ -8,8 +8,8 @@ const verifyToken = require("../middleware/auth");
 const checkAdmin = require("../middleware/checkAdmin");
 // API UPLOAD CAR
 router.post("/upload-car", verifyToken, checkAdmin, async (req, res) => {
-  const { title, description, price, location, imagePath, star, flash, usage, tax, tax2 } = req.body;
-  if (!title || !description || !price || !location)
+  const { title, description, price, location, imagePath } = req.body;
+  if (!title || !description || !price || !location )
     return res
       .status(400)
       .json({ success: false, message: "Vui lòng nhập đầy đủ các thông tin !" });
@@ -21,11 +21,10 @@ router.post("/upload-car", verifyToken, checkAdmin, async (req, res) => {
       price,
       location,
       imagePath,
-      tax,
-      usage,
-      flash,
-      star,
-      tax2,
+      // tax,
+      // star,
+      // usage,
+      // falsh,
       userPost: req.userId,
     });
 

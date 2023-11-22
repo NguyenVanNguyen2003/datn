@@ -35,8 +35,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 router.post("/register", upload.single("image"),  async (req, res) => {
-  const { fullName, password, email, location, phoneNumber} = req.body;
-  const imagePath = req.file.filename;
+  const { fullName, password, email, location, phoneNumber, imagePath} = req.body;
 
   if (!fullName || !password || !email || !phoneNumber || !location)
     return res.status(400).json({
@@ -58,7 +57,7 @@ router.post("/register", upload.single("image"),  async (req, res) => {
       password: hashedPassword,
       email,
       phoneNumber,
-      imagePath: req.file.filename,
+      imagePath,
       location,
     });
     await newUser.save();

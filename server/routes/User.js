@@ -8,7 +8,7 @@ const User = mongoose.model("User");
 const checkAdmin = require("../middleware/checkAdmin");
 
 //API GET ALL USER
-router.get("/getAllUser", verifyToken, checkAdmin, async (req, res) => {
+router.get("/getAllUser", async (req, res) => {
   try {
     const users = await User.find({}).select("-password");;
     res.json({ success: true, users });

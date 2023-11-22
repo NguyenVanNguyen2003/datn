@@ -11,7 +11,7 @@ const reviewRouter = require("./routes/Review")
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.pv6rkef.mongodb.net/TestAllProject?retryWrites=true&w=majority`
+      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.pv6rkef.mongodb.net/GOODCAR?retryWrites=true&w=majority`
     );
     console.log("Connect DB Thanh Cong");
   } catch (error) {
