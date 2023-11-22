@@ -54,9 +54,7 @@
 
 }
 .content__list {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
 }
 
 .content__list-child {
@@ -469,7 +467,8 @@ opacity: 0.8;
 
    /* Ẩn các thuộc tính cũ */
   .content__list {
-    display: none;
+    /* display: none; */
+    margin-top: 30px;
   }
 
   /* Thể hiện slide cho mobile */
@@ -500,7 +499,7 @@ opacity: 0.8;
     font-size: 3rem;
   }
   .content__list {
-    display: none;
+    /* display: none; */
   }
   .content__mobile {
     width: 80%;
@@ -528,7 +527,7 @@ opacity: 0.8;
     font-size: 3rem;
   }
   .content__list {
-    display: none;
+    /* display: none; */
   }
   .content__mobile {
     width: 98%;
