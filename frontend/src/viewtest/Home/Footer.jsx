@@ -60,9 +60,9 @@ function Footer() {
           <li className="footer__content-list-child footer__content-list-child-name-none">
             <h3 className="footer__content-list-child-name" ></h3>
             <div className="footer__content-list-child-text">
-              <p className="footer__content-list-child-text-text">Về Mioto</p>
-              <p className="footer__content-list-child-text-text">Mioto Blog</p>
-              <p className="footer__content-list-child-text-text">Tuyển dụng</p>
+              <Link to='/about' className="footer__content-list-child-text-text">Về Mioto</Link>
+              <Link to='/listblog' className="footer__content-list-child-text-text">Mioto Blog</Link>
+              <Link to='/user' className="footer__content-list-child-text-text">Người dùng</Link>
             </div>
           </li>
           <li className="footer__content-list-child">

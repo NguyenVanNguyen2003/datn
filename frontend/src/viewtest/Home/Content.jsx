@@ -19,6 +19,7 @@ function Content() {
       .then((response) => {
         const carsData = response.data.cars;
         setCars(carsData);
+        console.log('API Response:', response.data);
       })
       .catch((error) => {
         console.error('Lỗi:', error);
@@ -39,6 +40,7 @@ function Content() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+           initialSlide: 1,         
           infinite: true,
           dots: true,
         },
@@ -57,8 +59,7 @@ function Content() {
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1, 
-          initialSlide: 1,
-
+          initialSlide: 2,
         },
 
       },
@@ -76,36 +77,37 @@ function Content() {
   };
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
+    console.log('Search Value:', e.target.value);
   };
   return (
     <div className='content' id='content'>
       <h1 className='content__text'>Xe dành cho bạn</h1>
-      <form className='content__search'>
-        <div class="content__search-form">
-          <input 
-           type="text"
-           className="content__search-form-input"
-           placeholder="Tìm Kiếm Xe"
-           value={search}
-           onChange={handleSearchChange}
-          />
-        </div>
-        <button className='content__search-button'  onClick={(e) => { e.preventDefault(); }}>
-            <i className='content__search-button-text'> <FaSearch></FaSearch> </i>
-        </button>
-      </form>
+        <form className='content__search'>
+          <div class="content__search-form">
+            <input 
+            type="text"
+            className="content__search-form-input"
+            placeholder="Tìm Kiếm Xe"
+            value={search}
+            onChange={handleSearchChange}
+            />
+          </div>
+          <button className='content__search-button'  onClick={(e) => { e.preventDefault(); }}>
+              <i className='content__search-button-text'> <FaSearch></FaSearch> </i>
+          </button>
+        </form>
       <div className='content__list'>
       <Slider {...contact__pc_tablet}>
         {cars
         .filter((car) =>
-        search.toLowerCase() === ''
-          ? true  
-          : car.title.toLowerCase().includes(search)        
+        search.trim() === ''
+          ? true
+          : car.title.toLowerCase().includes(search.toLowerCase())        
         )
         .map((car, index) => (
           <Link to={`/product/${car._id}`} className='content__list-child' key={index}>
             <nav>
-              <img src={car.imagePath} className='content__list-child-img'></img>
+              <img src={car.imagePath} className='content__list-child-img'/>
               <div className='btn__freetax content__list-child-img-tax '>
                 <p className='content__list-child-img-tax-text'>
                   {car.flash}
@@ -119,7 +121,7 @@ function Content() {
             </nav>
             <div className='content__list-child-auto'>
               <div className='content__list-child-auto-car btn__auto'>
-                <p className='content__list-child-auto-car-text'> Số tự động</p>
+                <p className='content__list-child-auto-car-text'> {car.tax2}</p>
               </div>
               <div className='content__list-child-auto-location'></div>
             </div>

@@ -7,8 +7,13 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loginError, setLoginError] = useState(null); 
+  function resetError() {
+    setLoginError(null);
+  }
+  
   function handleSubmit(e) {
+
     e.preventDefault();
     fetch("http://localhost:5000/login", {
       method: "POST",
@@ -25,9 +30,17 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if(data.accessToken) {
           console.log(data, "userLogin");
         window.localStorage.setItem("accessToken", data.accessToken);
         window.location.href = "http://localhost:3000";
+        } else {
+          setLoginError("Đăng nhập không thành công. Vui lòng kiểm tra lại tài khoản")
+        }
+      })
+      .catch((error) => {
+        console.error("Đã xảy ra lỗi:", error);
+        setLoginError("Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại sau.");
       });
   }
 
@@ -88,9 +101,14 @@ const Login = () => {
               <p> Quên mật khẩu?</p>
             </div>
             <div className="wrap-btn-login">
-              <button type="submit" className="">
+              <button type="submit" className="" onClick={resetError}>
                Đăng nhập
               </button>
+              {loginError && (
+                <div className="alert alert-danger" role="alert">
+                {loginError}
+              </div>
+              )}
             </div>
             <div className="register-now">
               <p>Bạn chưa là thành viên?  <Link to= "/register"> <span >Đăng kí ngay</span></Link> </p>

@@ -264,29 +264,24 @@ function ContentProduct() {
             },
         ],
     };
-    const dataContactProduct = [
+    const dataImageCar = [
         {
             id: 1,
-            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+            img: car.imagePath
         },
         {
             id: 2,
-            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+            img: car.image1
         },
         {
             id: 3,
-            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+            img: car.image2
         },
         {
             id: 4,
-            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
+            img: car.image3
         },
-        {
-            id: 5,
-            imgContentProduct: 'https://vinfastgialam.com/wp-content/uploads/2019/12/mau-xe-oto-vinfast-lux-a20-6.png'
-        },
-
-    ];
+    ]
     return (
         <div className='contentproduct'>
             <div className="contentproduct__img">
@@ -294,20 +289,15 @@ function ContentProduct() {
                     <img src={car.imagePath} alt={car.title}></img>
                 </div>
                 <div className="contentproduct__img-list">
-                    <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/bmw_320i__2013/p/g/2023/02/24/16/FNoU4l7040O_BAPVzBAPEw.jpg" alt="" className="contentproduct__img-list-child" />
-                    <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/bmw_320i__2013/p/g/2023/02/24/16/O-m7yef1dmvsYgorG3dpmA.jpg" alt="" className="contentproduct__img-list-child" />
-                    <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/bmw_320i__2013/p/g/2023/02/24/16/IZK1xCtN5AvagRSuaq64kg.jpg" alt="" className="contentproduct__img-list-child" />
-                </div>
-                <div className='contentproduct__img-all'>
-                    <i><FaImage></FaImage></i>
-                    <p>Xem tất cả ảnh</p>
+                    <img src={car.image1} alt="" className="contentproduct__img-list-child" />
+                    <img src={car.image2} alt="" className="contentproduct__img-list-child" />
+                    <img src={car.image3} alt="" className="contentproduct__img-list-child" />
                 </div>
             </div>
-            <Slider {...contactproduct__tablet}>
-                {dataContactProduct.map((item) => (
-                    <div className='contentproduct-imgtablet'>
-                        <img src={item.imgContentProduct} className='contentproduct-imgtablet-img'></img>
-                    </div>
+            <Slider {...contactproduct__tablet} className='contentproduct__img-tablet'>
+                {dataImageCar.map((item) => (
+                    <img src={item.img} className='contentproduct-imgtablet-img'></img>
+
                 ))}
             </Slider>
             <div className="contentproduct__detail">

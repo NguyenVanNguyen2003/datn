@@ -1018,14 +1018,9 @@
   }
 
   /* css hình ảnh xe chi tiết tablet */
-  .contentproduct-imgtablet {
-    width: 100%;
-    height: 550px;
+  .contentproduct__img-tablet{
+    display: none;
   }
-  .contentproduct-imgtablet-img {
-    width: 100%;
-    height: 100%;
-  } 
 
 /* Reponsive */
 /* Mobile 0-750px */
@@ -1033,9 +1028,13 @@
     .contentproduct__img {
         display: none
     }
-    .contentproduct-imgtablet {
+    .contentproduct__img-tablet {
         height: 420px;
         display: block;
+    }
+    .contentproduct-imgtablet-img{
+        width: 100%;
+        height: 420px;
     }
     .contentproduct__detail {
         width: 80%;
@@ -1086,8 +1085,12 @@
     .contentproduct__img {
         display:none
       }
-      .contentproduct-imgtablet {
+      .contentproduct__img-tablet  {
         display: block;
+        height: 350px;
+      }
+      .contentproduct-imgtablet-img {
+        width: 100%;
         height: 350px;
       }
     .contentproduct__detail-container-name .group-name h3 {
@@ -1147,9 +1150,13 @@
     .contentproduct__img {
         display: none; 
     }
-    .contentproduct-imgtablet {
+    .contentproduct__img-tablet  {
         height: 550px;
         display: block;
+    }
+    .contentproduct-imgtablet-img {
+        width: 100%;
+        height: 550px;
     }
     .contentproduct__detail {
         width: 80%;
