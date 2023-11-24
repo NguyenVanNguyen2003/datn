@@ -1,14 +1,26 @@
 import './css/base.css';
 import './css/sale.css';
-// import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import imgGirl from './img/banner1.jpg';
+import { FaX } from "react-icons/fa6";
 
 function Sale() {
-    const [defaultImage, setDefaultImage] = useState({});
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [overlayOpacity, setOverlayOpacity] = useState(0);
+
+    const openModal = (image) => {
+        setSelectedImage(image);
+        setModalOpen(true);
+        setOverlayOpacity(1); // Đặt giá trị opacity thành 1 khi mở modal   
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setOverlayOpacity(0); // Đặt giá trị opacity thành 0 khi đóng modal
+    };
     const settings = {
         dots: true,  // thể hiện chấm nhỏ dưới slide
         infinite: false, // slide cuối + click = slide đầu (false)
@@ -53,77 +65,44 @@ function Sale() {
             },
         ],
     };
-
-    const handleErrorImage = (data) => {
-        setDefaultImage((prev) => ({
-            ...prev,
-            [data.target.alt]: data.target.alt,
-            linkDefault: imgGirl,
-        }));
-    };
     const dataDigitalBestSeller = [
         {
             id: 1,
-            title: 'Mario Kart™ 8 Deluxe',
-            price: '$59.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/08/26AFULG2.jpg',
         },
         {
             id: 2,
-            title: 'TRIANGLE STRATEGY™',
-            price: '$59.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/10/2NTDDMBQ.jpg',
         },
         {
             id: 3,
-            title: 'Pokémon™ Legends: Arceus',
-            price: '$59.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/09/25F448Y1.jpg',
         },
         {
             id: 4,
-            title: 'Super Mario™ 3D World + Bowser’s Fury',
-            price: '$59.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/09/dich_vu_thue_xe_tu_lai_tphcm.jpg',
         },
         {
             id: 5,
-            title: 'Cuphead',
-            price: '$19.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/10/thue_xe_tu_lai_4_cho_tphcm.jpg',
         },
         {
             id: 6,
-            title: 'Minecraft',
-            price: '$29.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/01/10/thue_xe_co_tai_xe_tphcm.jpg',
         },
         {
             id: 7,
-            title: 'Mario + Rabbids® Kingdom Battle',
-            price: '$59.99',
-            category: 'Nintendo Switch',
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/02/08/thue_xe_tu_lai_7_cho_tphcm.jpg',
         },
         {
             id: 8,
-            title: 'Unravel Two',
-            price: '$59.99',
-            category: 'Nintendo Switch',
-            sale: 63, //percent
             linkImg:
                 'https://n1-cstg.mioto.vn/g/2023/10/06/01/H4831UA9.jpg',
         },
@@ -138,28 +117,29 @@ function Sale() {
             <div className="sale__slider">
                 <Slider {...settings}>
                     {dataDigitalBestSeller.map((item) => (
-                        <div className="sale__slider-container">
+                        <div className="sale__slider-container"  onClick={() => openModal(item.linkImg)}>
                             <div className="sale__slider-container-top">
                                 <img
                                     src={
-                                        defaultImage[item.title] === item.title
-                                            ? defaultImage.linkDefault
-                                            : item.linkImg
+                                        item.linkImg
                                     }
                                     alt={item.title}
-                                    onError={handleErrorImage}
                                 />
-                                {/* <h1>{item.title}</h1> */}
                             </div>
-                            {/* <div className="sale__slider-container-bottom">
-                                <h3>{item.price}</h3>
-                                <span className="sale__slider-container-bottom-text">{item.category}</span>
-                            </div> */}
                         </div>
                     ))}
                 </Slider>
             </div>
-
+            {modalOpen && (
+                <div className="modal-overlay" onClick={closeModal} style={{ opacity: overlayOpacity }}>
+                    <div className="modal" onClick={(e) => e.stopPropagation()}>
+                        <span className="modal-close" onClick={closeModal}>
+                            <FaX/>
+                        </span>
+                        <img src={selectedImage} alt="Selected" />
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

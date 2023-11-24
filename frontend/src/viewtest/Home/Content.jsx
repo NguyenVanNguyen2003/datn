@@ -33,7 +33,8 @@ function Content() {
     slidesToShow: 3,
     slidesToScroll: 1,
     rows: 3,          // Số hàng
-    initialSlide: 0,
+    initialSlide: 1,
+    vertical:false,
     responsive: [
       {
         breakpoint: 1024,
@@ -102,10 +103,10 @@ function Content() {
         .filter((car) =>
         search.trim() === ''
           ? true
-          : car.title.toLowerCase().includes(search.toLowerCase())        
+          : car.title.toLowerCase().includes(search.toLowerCase())    
         )
         .map((car, index) => (
-          <Link to={`/product/${car._id}`} className='content__list-child' key={index}>
+          <Link to={`/product/${car._id}`} className='content__list-child'  key={index}>
             <nav>
               <img src={car.imagePath} className='content__list-child-img'/>
               <div className='btn__freetax content__list-child-img-tax '>

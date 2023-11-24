@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './css/contentproduct.css';
 import './css/base.css';
 import { FaImage, FaHeart, FaShareNodes, FaStar, FaFax, FaShield, FaQuestion, FaCalendarMinus, FaCircleCheck, FaCircleExclamation, FaFlag, FaChair, FaMendeley, FaChargingStation, FaBluetoothB, FaCamera, FaCameraRetro, FaBullseye, FaCarBurst, FaLocationCrosshairs, FaUsb, FaGlassWater, FaHandDots, FaIdCard, FaIdCardClip, FaLocationDot, FaCarRear } from "react-icons/fa6";
@@ -29,192 +29,6 @@ function ContentProduct() {
     if (!car) {
         return <div>Loading...</div>; // Hiển thị khi đang tải dữ liệu
     }
-    const car__slider = {
-        dots: true,
-        infinite: false,
-        speed: 400,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 850,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 550,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-
-            },
-            {
-                breakpoint: 350,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-
-            },
-        ],
-    };
-    const handleErrorImage = (data) => {
-        setDefaultImage((prev) => ({
-            ...prev,
-            [data.target.alt]: data.target.alt,
-            linkDefault: imgGirl,
-        }));
-    };
-    const dataCarSlider = [
-        {
-            id: 1,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            linkProductItem: '/product',
-            userImg: user,
-            linkImg:
-                'https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mg_5_luxury_2022/p/g/2023/06/12/22/3VTvKEyMj85rR88fqQaA7Q.jpg',
-        },
-        {
-            id: 2,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            linkProduct: '/trip',
-            userImg: user,
-            linkImg:
-                'https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/chevrolet_cruze_2016/p/g/2023/06/23/15/qLsD4cE0csFdWchSnzRsjw.jpg',
-        },
-        {
-            id: 3,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/vinfast_vf5_2023/p/g/2023/08/07/23/Qh_M-OYpOcvC93rJHgeY-A.jpg',
-        },
-        {
-            id: 4,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/kia_seltos_deluxe_2021/p/g/2023/03/14/11/ZE7WZ8uAqkMen0N9uIlseA.jpg',
-        },
-        {
-            id: 5,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_300/v1/ncom/en_US/games/switch/m/mario-kart-8-deluxe-switch/hero?_a=AJADJWI0',
-        },
-        {
-            id: 6,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_300/v1/ncom/en_US/games/switch/m/mario-kart-8-deluxe-switch/hero?_a=AJADJWI0',
-        },
-        {
-            id: 7,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_300/v1/ncom/en_US/games/switch/m/mario-kart-8-deluxe-switch/hero?_a=AJADJWI0',
-        },
-        {
-            id: 8,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_300/v1/ncom/en_US/games/switch/m/mario-kart-8-deluxe-switch/hero?_a=AJADJWI0',
-        },
-        {
-            id: 9,
-            tax: 'Đặt xe nhanh',
-            flash: 'Miễn thế chấp',
-            number: 'Số tự động',
-            title: 'VINFAST LUX SA 2.0 2021',
-            location: 'Quận 7, Hồ Chí Minh',
-            start: '5.0',
-            usage: '75 chuyến',
-            price: '800k',
-            userImg: user,
-            linkImg:
-                'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_auto/c_scale,w_300/v1/ncom/en_US/games/switch/m/mario-kart-8-deluxe-switch/hero?_a=AJADJWI0',
-        },
-
-    ];
-    const handleProductClick = (linkProduct) => {
-        if (linkProduct) {
-            window.location.href = linkProduct;
-        }
-    };
     // ảnh xe chi tiết trên cùng
     const contactproduct__tablet = {
         dots: true,
@@ -282,6 +96,72 @@ function ContentProduct() {
             img: car.image3
         },
     ]
+    // ảnh xe tương tự ở dưới cùng
+    const car__slider = {
+        dots: true,
+        infinite: false,
+        speed: 400,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 850,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+
+            },
+            {
+                breakpoint: 350,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+
+            },
+        ],
+    };
+    const handleErrorImage = (data) => {
+        setDefaultImage((prev) => ({
+            ...prev,
+            [data.target.alt]: data.target.alt,
+            linkDefault: imgGirl,
+        }));
+    };
+    const dataCarSlider = [
+        {
+            id: 1,
+            tax: 'Đặt xe nhanh',
+            flash: 'Miễn thế chấp',
+            number: 'Số tự động',
+            title: 'VINFAST LUX SA 2.0 2021',
+            location: 'Quận 7, Hồ Chí Minh',
+            start: '5.0',
+            usage: '75 chuyến',
+            price: '800k',
+            userImg: user,
+            linkImg: car.imagePath
+        }
+    ];
     return (
         <div className='contentproduct'>
             <div className="contentproduct__img">
@@ -798,7 +678,8 @@ function ContentProduct() {
                 <h2>Xe tương tự</h2>
                 <Slider {...car__slider}>
                     {dataCarSlider.map((item) => (
-                        <div key={item.id} className="contentproduct__other-child" onClick={() => handleProductClick(item.linkProductItem)}>
+                        <Link>
+                        <div key={item.id} className="contentproduct__other-child">
                             <div className="contentproduct__other-child-top">
                                 <img
                                     key={item.id}
@@ -867,6 +748,7 @@ function ContentProduct() {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </Slider>
             </div>

@@ -10,7 +10,6 @@ import Aboutme from './Aboutme';
 import Registercar from './Registercar';
 import Blog from './Blog';
 import Footer from './Footer';
-// import Saleof from './Saleof';
 
 const Main = () => {
   return (
@@ -27,7 +26,6 @@ const Main = () => {
       <Registercar />
       <Blog />
       <Footer />
-      {/* <Saleof/> */}
     </div>
   )
 }
